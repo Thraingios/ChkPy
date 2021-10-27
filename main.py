@@ -13,9 +13,10 @@ author: Anthony
 description: This is the main class of the file.
 '''
 import modes
-
+import art
 class main: 
-    modes.Tools.auto8(input("enter a filename"))
+    art.openart()
+    modes.Tools.auto8(input("ENTER A FILENAME HERE -> ")) #currently useing input for testing ownly
     pass
 
 

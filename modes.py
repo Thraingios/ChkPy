@@ -22,14 +22,14 @@ class Tools:
     description: This fucntion calls autopep8 from the system and runs it agenst a input file
     '''
     def auto8(filename): # F1
-        os.system("autopep8 filename")
+        os.system("autopep8 --in-place --aggressive --aggressive --aggressive " + filename)
 
     ''' 
     date: 10/27/21
     author: Anthony
     description: This fucntion calls pylint and runs it agenst a input file
     '''
-    def pylint(): #F2
+    def pylint(filename): #F2
         pass
 
     ''' 
@@ -37,10 +37,16 @@ class Tools:
     author: Anthony
     description: This fucntion calls pycodestyle from the system and runs it agenst a input file
     '''
-    def pycode(): #F3
+    def pycode(filename): #F3
         pass
 
 
 
 class Modes:
+    def Before_and_after_mode():
+        pass
+    def Dev_Mode():
+        pass
+    def Report_mode():
+        pass
     pass
