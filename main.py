@@ -2,7 +2,7 @@
 Authonr(s): Anthony, Nick, Dylan
 Created date: 10/27/21
 Description: This is the main class for checkpy, this is what the users will interact with whn the file is run.
-last edit: 10/27/21
+last edit: 11/01/21
 PLEASE UPDATE LAST EDIT WHEN YOU UPDATE THIS FILE
 '''
 
