@@ -4,7 +4,7 @@ Created date: 10/27/21
 Description: This file contains both the functions class (tools class) and the modes class
 The functions class contians functions to call autopep8, pycodestyle & pylint
 The modes class contains various function calls to create the program modes
-last edit: 11/01/21
+last edit: 11/02/21
 PLEASE UPDATE LAST EDIT WHEN YOU UPDATE THIS FILE
 '''
 import os
@@ -46,7 +46,6 @@ class Tools:
     def pycode(filename): #F3
         pycodestyle = os.popen("pycodestyle " + filename).read()
         return pycodestyle
-
 
 
 class Modes:
