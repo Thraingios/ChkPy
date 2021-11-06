@@ -16,9 +16,10 @@ description: This is the main class of the file.
 
 
 
-import modes
-import art
-class main:
+import modes, art, sys, getopt
+
+
+def main(args):
     art.openart()
 
     myfile = input("ENTER A FILENAME HERE -> ")
@@ -32,6 +33,27 @@ class main:
     # currently using input for testing only, changed this to use input at myfile so i didnt have to repeat myself - Nick
     modes.Tools.auto8(myfile)
 
+    #################################################################
+    #                                                               #
+    #              below this is code for arguments                 #
+    #                                                               #
+    #################################################################
+
+    opts, args = getopt.getopt(args,"Ddr")
+    
+    for opt, args in opts:
+        if opt in ['-D']:
+            print('directory mode')
+
+        if opt in ['-d']:
+            print('dev mode')
+
+        if opt in ['-r']:
+            print('report mode')
+
+
+
 
 if __name__ == "__main__":
-    main()
+   main(sys.argv[1:])
+
