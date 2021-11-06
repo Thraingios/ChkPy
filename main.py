@@ -18,42 +18,32 @@ description: This is the main class of the file.
 
 import modes, art, sys, getopt
 
-
-def main(args):
+def main(file,args):
     art.openart()
-
-    myfile = input("ENTER A FILENAME HERE -> ")
-
-    mypylint = modes.Tools.pylint(myfile)
-    print(mypylint[0])
-
-    mypycodestyle = modes.Tools.pycode(myfile)
-    print(mypycodestyle)
-
-    # currently using input for testing only, changed this to use input at myfile so i didnt have to repeat myself - Nick
-    modes.Tools.auto8(myfile)
-
-    #################################################################
-    #                                                               #
-    #              below this is code for arguments                 #
-    #                                                               #
-    #################################################################
-
     opts, args = getopt.getopt(args,"Ddr")
-    
+    file = file[0]
+
     for opt, args in opts:
         if opt in ['-D']:
             print('directory mode')
 
         if opt in ['-d']:
-            print('dev mode')
+            print('dev mode ' + file)
 
         if opt in ['-r']:
-            print('report mode')
+            print('report mode ' + file)
 
+    
+    '''
+    #mypylint = modes.Tools.pylint(file)
+    #print(mypylint[0])
 
+    #mypycodestyle = modes.Tools.pycode(file)
+    #print(mypycodestyle)
+
+    #modes.Tools.auto8(file)
+    '''
 
 
 if __name__ == "__main__":
-   main(sys.argv[1:])
-
+   main(sys.argv[:1], sys.argv[2:])
