@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 '''
 Authonr(s): Anthony, Nick, Dylan
 Created date: 10/27/21
@@ -22,9 +24,11 @@ def main(file,args):
     art.openart()
     opts, args = getopt.getopt(args,"Ddr")
     file = file[0]
-    Dir_mode_steps = ['pylint','pycodestyle','pylint'] # note this is an example just to run the steps we can fill them in later
+    Dir_mode_steps = ['pylint','pycode','pylint'] # note this is an example just to run the steps we can fill them in later
     Dev_mode_steps = []
     Report_mode_steps = []
+
+    print(file)
 
     for opt, args in opts:
         if opt in ['-D']:
@@ -52,4 +56,5 @@ def main(file,args):
 
 
 if __name__ == "__main__":
-   main(sys.argv[:1], sys.argv[2:])
+    # print(sys.argv)
+    main(sys.argv[1:], sys.argv[2:])

@@ -55,7 +55,7 @@ class Modemaker(object):
     author: Nick
     description: This class takes in a filename as well as a variable amount of other variables (which would be the names of tools) to help build the object
     '''
-    def __init__(self, filename, *optargs): #note *args is a variable argument meaning that it can take any amount of arguments
+    def __init__(self, filename, optargs): #note *args is a variable argument meaning that it can take any amount of arguments
         self.filename = filename
         self.optargs = optargs
     
@@ -68,13 +68,14 @@ class Modemaker(object):
         we then iterate through this command list using eval to actually run the command (note i know its techinally bad practice but the user wont be supplying any of the
         arguments for it and is just used internally) from there we take the output (if any) from each command and append it to command out which is then returned to the user
         '''
+        #print(Tools.pylint('main.py'))
         command_list = []
         command_out = []
         for arg in self.optargs:
-            for temp in arg:
-                command_list.append("Tools." + temp +"(" + self.filename +")")
+            command_list.append("Tools." + arg +"('" + self.filename +"')")
         for command in command_list:
-            command_out.append(eval(command))
+            print(command)
+            command_out.append(exec(command))
         return command_out
         
         
