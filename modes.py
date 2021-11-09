@@ -27,6 +27,7 @@ class Tools:
 
     '''
     date: 11/01/21
+    edited 11/09/21
     author: Nick
     description: This function calls pylint and runs it against an input file and returns the
     output in a tuple, first part of the tuple should be what we need most of the time however
@@ -34,7 +35,7 @@ class Tools:
     '''
     def pylint(filename): #F2
         (pylint_stdout, pylint_stderr) = epylint.py_run(filename, return_std=True)
-        return pylint_stdout.getvalue(), pylint_stderr.getvalue()
+        return pylint_stdout.getvalue()
 
 
     '''
@@ -48,11 +49,36 @@ class Tools:
         return pycodestyle
 
 
-class Modes:
-    def Before_and_after_mode():
-        pass
-    def Dev_Mode():
-        pass
-    def Report_mode():
-        pass
-    pass
+class Modemaker(object):
+    '''
+    date: 11/09/21
+    author: Nick
+    description: This class takes in a filename as well as a variable amount of other variables (which would be the names of tools) to help build the object
+    '''
+    def __init__(self, filename, *optargs): #note *args is a variable argument meaning that it can take any amount of arguments
+        self.filename = filename
+        self.optargs = optargs
+    
+    def run(self):
+        '''
+        date: 11/09/21
+        author: Nick
+        description:
+        has two blank lists, one being the command list. this is where we take the arguments passed when making the object and turns them into usable commands.
+        we then iterate through this command list using eval to actually run the command (note i know its techinally bad practice but the user wont be supplying any of the
+        arguments for it and is just used internally) from there we take the output (if any) from each command and append it to command out which is then returned to the user
+        '''
+        command_list = []
+        command_out = []
+        for arg in self.optargs:
+            for temp in arg:
+                command_list.append("Tools." + temp +"(" + self.filename +")")
+        for command in command_list:
+            command_out.append(eval(command))
+        return command_out
+        
+        
+
+            
+            
+

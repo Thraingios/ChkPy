@@ -10,8 +10,7 @@ import time
 
 
 app = Flask(__name__)
-
-bot = Popen(['python3.7','bot.py'])
+bot = Popen(['python3.7', 'bot.py'])
 
 
 @app.route('/update', methods=['POST'])
@@ -26,8 +25,5 @@ def update():
     return' 200'
 
 
-
-
-
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=5001)
+    app.run(host='0.0.0.0', port=5001)
