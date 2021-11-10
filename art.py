@@ -16,7 +16,6 @@ def openart():
     print("                      |_|      |___/      ")
     print(" ")
 
-
 # this is all the old art/ASCCI art from the OG chkpy in case we want to re-use bits and peaces 
 #also as an example to potentally retain the og arts tyle
 '''

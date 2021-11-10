@@ -24,6 +24,7 @@ class Tools:
     '''
     def auto8(filename): # F1
         os.system("autopep8 --in-place --aggressive --aggressive --aggressive " + filename)
+        return("RUNNING AUTOPEP8 WITH AGRESSIVENESS LVL 3")
 
     '''
     date: 11/01/21
@@ -68,14 +69,12 @@ class Modemaker(object):
         we then iterate through this command list using eval to actually run the command (note i know its techinally bad practice but the user wont be supplying any of the
         arguments for it and is just used internally) from there we take the output (if any) from each command and append it to command out which is then returned to the user
         '''
-        #print(Tools.pylint('main.py'))
         command_list = []
         command_out = []
         for arg in self.optargs:
             command_list.append("Tools." + arg +"('" + self.filename +"')")
         for command in command_list:
-            print(command)
-            command_out.append(exec(command))
+            command_out.append(eval(command))
         return command_out
         
         

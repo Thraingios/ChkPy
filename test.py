@@ -8,7 +8,6 @@ from subprocess import Popen
 import os
 import time
 
-
 app = Flask(__name__)
 bot = Popen(['python3.7', 'bot.py'])
 
@@ -16,7 +15,7 @@ bot = Popen(['python3.7', 'bot.py'])
 @app.route('/update', methods=['POST'])
 def update():
     global bot
-    bot.terminate()
+    bot.  terminate()
     os.system('sudo git pull')
     f = open("pip_update.txt", "r")
     for each in f.readlines():
