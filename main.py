@@ -1,4 +1,4 @@
-#!/usr/bin/python
+
 
 '''
 Authonr(s): Anthony, Nick, Dylan
@@ -55,6 +55,6 @@ def main(file,args):
     '''
 
 
-if __name__ == "__main__":
-    # print(sys.argv)
-    main(sys.argv[1:], sys.argv[2:])
+# if __name__ == "__main__":
+#     # print(sys.argv)
+#     main(sys.argv[1:], sys.argv[2:])
