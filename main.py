@@ -28,23 +28,24 @@ def main(file,args):
     Dev_mode_steps = ['auto8', 'pylint', 'pycode']
     Report_mode_steps = ['pylint', 'pycode']
     Default_steps =['pylint','pycode', 'auto8', 'pylint', 'pycode']
+    seperator = "\n\n\n###############################################\n\n\n"
 
 
     if not opts:
         Default_mode = modes.Modemaker(file, Default_steps)
-        print(*Default_mode.run(), sep = "\n\n\n###############################################\n\n\n")
+        print(*Default_mode.run(), sep = seperator)
     for opt, args in opts:
         if opt in ['-D']:
             Directory_mode = modes.Modemaker(file, Dir_mode_steps)
-            print(*Directory_mode.run(), sep = "\n\n\n###############################################\n\n\n") #the run function returns a list, so adding a * in front of it should iterate over the list and then seperates each list value by a newline
+            print(*Directory_mode.run(), sep = seperator) #the run function returns a list, so adding a * in front of it should iterate over the list and then seperates each list value by a newline
 
         if opt in ['-d']:
             Dev_mode = modes.Modemaker(file, Dev_mode_steps)
-            print(*Dev_mode.run(), sep = "\n\n\n###############################################\n\n\n")
+            print(*Dev_mode.run(), sep = seperator)
 
         if opt in ['-r']:
             Report_mode = modes.Modemaker(file, Report_mode_steps)
-            print(*Report_mode.run(), sep = "\n\n\n###############################################\n\n\n")
+            print(*Report_mode.run(), sep = seperator)
 
     
     '''
