@@ -25,10 +25,11 @@ def main(file,args):
     opts, args = getopt.getopt(args,"Ddr")
     file = file[0]
     Dir_mode_steps = [] # note this is an example just to run the steps we can fill them in later
+    Default_steps =['pylint','pycode', 'auto8', 'pylint', 'pycode']
     Dev_mode_steps = ['auto8', 'pylint', 'pycode']
     Report_mode_steps = ['pylint', 'pycode']
-    Default_steps =['pylint','pycode', 'auto8', 'pylint', 'pycode']
-    seperator = "\n\n\n###############################################\n\n\n"
+    
+    seperator = "\n=====================================================================\n"
 
 
     if not opts:
