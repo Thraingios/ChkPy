@@ -8,6 +8,7 @@ last edit: 11/02/21
 PLEASE UPDATE LAST EDIT WHEN YOU UPDATE THIS FILE
 '''
 import os
+from os import walk
 from pylint import epylint
 
 '''
@@ -48,6 +49,13 @@ class Tools:
     def pycode(filename): #F3
         pycodestyle = os.popen("pycodestyle " + filename).read()
         return pycodestyle
+    
+    def directorymode(mydirectory):
+        f = []
+        for (root,dirs,files) in walk(mydirectory):
+            if '.py' in files:
+                f.extend(files)
+        return f
 
 
 class Modemaker(object):
@@ -71,10 +79,13 @@ class Modemaker(object):
         '''
         command_list = []
         command_out = []
+
         for arg in self.optargs:
             command_list.append("Tools." + arg +"('" + self.filename +"')")
         for command in command_list:
             command_out.append(eval(command))
+            #if 'directory' in command:
+                #pass
         return command_out
         
         

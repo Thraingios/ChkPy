@@ -1,10 +1,10 @@
 
 
 '''
-Authonr(s): Anthony, Nick, Dylan
+Author(s): Anthony, Nick, Dylan
 Created date: 10/27/21
 Description: This is the main class for checkpy, this is what the users will interact with whn the file is run.
-last edit: 11/09/21
+last edit: 11/15/21
 PLEASE UPDATE LAST EDIT WHEN YOU UPDATE THIS FILE
 '''
 
@@ -24,7 +24,7 @@ def main(file,args):
     art.openart()
     opts, args = getopt.getopt(args,"Ddr")
     file = file[0]
-    Dir_mode_steps = [] # note this is an example just to run the steps we can fill them in later
+    Dir_mode_steps = ['directorymode','pylint'] # note this is an example just to run the steps we can fill them in later
     Dev_mode_steps = ['auto8', 'pylint', 'pycode']
     Report_mode_steps = ['pylint', 'pycode']
     Default_steps =['pylint','pycode', 'auto8', 'pylint', 'pycode']
