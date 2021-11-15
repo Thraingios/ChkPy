@@ -46,19 +46,3 @@ def main(file,args):
         if opt in ['-r']:
             Report_mode = modes.Modemaker(file, Report_mode_steps)
             print(*Report_mode.run(), sep = seperator)
-
-    
-    '''
-    #mypylint = modes.Tools.pylint(file)
-    #print(mypylint[0])
-
-    #mypycodestyle = modes.Tools.pycode(file)
-    #print(mypycodestyle)
-
-    #modes.Tools.auto8(file)
-    '''
-
-
-# if __name__ == "__main__":
-#     # print(sys.argv)
-#     main(sys.argv[1:], sys.argv[2:])
