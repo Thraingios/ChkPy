@@ -25,7 +25,7 @@ class Tools:
     '''
     def auto8(filename): # F1
         os.system("autopep8 --in-place --aggressive --aggressive --aggressive " + filename)
-        return("RUNNING AUTOPEP8 WITH AGRESSIVENESS LVL 3")
+        return("\nRUNNING AUTOPEP8 WITH AGRESSIVENESS LVL 3\n")
 
     '''
     date: 11/01/21
@@ -37,8 +37,8 @@ class Tools:
     '''
     def pylint(filename): #F2
         (pylint_stdout, pylint_stderr) = epylint.py_run(filename, return_std=True)
-        return pylint_stdout.getvalue()
-
+        #return pylint_stdout.getvalue()
+        return "\n OUTPUT FROM PYLINT! \n\n" + pylint_stdout.getvalue() + "\n"
 
     '''
     date: 10/27/21
@@ -48,7 +48,7 @@ class Tools:
     '''
     def pycode(filename): #F3
         pycodestyle = os.popen("pycodestyle " + filename).read()
-        return pycodestyle
+        return "\n OUTPUT FROM PYCODESTYLE! \n" + pycodestyle + "\n"
     
     def directorymode(mydirectory):
         f = []
@@ -56,6 +56,10 @@ class Tools:
             if '.py' in files:
                 f.extend(files)
         return f
+        
+
+
+        
 
 
 class Modemaker(object):
