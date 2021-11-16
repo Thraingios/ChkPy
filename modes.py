@@ -53,8 +53,9 @@ class Tools:
     def directorymode(mydirectory):
         f = []
         for (root,dirs,files) in walk(mydirectory):
-            if '.py' in files:
-                f.extend(files)
+            for name in files:
+                if '.py' in name [-3:]:
+                    f.append(os.path.join(root,name))
         return f
         
 

@@ -6,8 +6,17 @@ a directory and gives a list back of specifically python filenames
 last edit: 11/15/21
 PLEASE UPDATE LAST EDIT WHEN YOU UPDATE THIS FILE
 '''
+import modes
+import main
 
-from os import walk
+
+def Directory(dir,steps,args):
+    Directory_mode = modes.Modemaker(dir,steps)
+    test = Directory_mode.run()
+    for file in test[0]:
+        tempfilelist = [file,args]
+        print("\n=====================================================================\n\n"+'Currently Testing\n'+file+"\n\n=====================================================================\n")
+        main.main(tempfilelist,args)
 
 
 

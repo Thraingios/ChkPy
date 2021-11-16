@@ -1,8 +1,9 @@
-import sys, getopt
+import sys
+import getopt
 
 
-def main(file,args):
-    opts, args = getopt.getopt(args,"Ddr")
+def main(file, args):
+    opts, args = getopt.getopt(args, "Ddr")
     file = file[0]
 
     for opt, args in opts:
@@ -17,7 +18,4 @@ def main(file,args):
 
 
 if __name__ == "__main__":
-   main(sys.argv[:1], sys.argv[2:])
-
-
-  
+    main(sys.argv[:1], sys.argv[2:])
