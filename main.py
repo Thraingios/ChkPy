@@ -18,11 +18,10 @@ description: This is the main class of the file.
 
 
 
-import modes, art, getopt, os, directory
+import modes, getopt, os, directory
 
 def main(file,args):
     tempargs = args
-    art.openart()
     opts, args = getopt.getopt(args,"dr")
     file = file[0]
     Dir_mode_steps = ['directorymode']

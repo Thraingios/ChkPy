@@ -15,7 +15,7 @@ def Directory(dir,steps,args):
     test = Directory_mode.run()
     for file in test[0]:
         tempfilelist = [file,args]
-        print("\n=====================================================================\n\n"+'Currently Testing\n'+file+"\n\n=====================================================================\n")
+        print("\n|#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#|\n|                                                           |\n"+'\033[1m'+'              Currently Testing\n'+'              '+file+'\033[0m' +"\n|                                                           |\n|#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#|\n")
         main.main(tempfilelist,args)
 
 

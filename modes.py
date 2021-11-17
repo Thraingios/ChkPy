@@ -87,6 +87,7 @@ class Modemaker(object):
 
         for arg in self.optargs:
             command_list.append("Tools." + arg +"('" + self.filename +"')")
+
         for command in command_list:
             command_out.append(eval(command))
             #if 'directory' in command:
