@@ -16,13 +16,13 @@ ChkPy! also has 3 options. these modes/options are explained below in detail.
 
 # ChkPy!'s 3 Options:
 ```
-    - The default or " " whitch runs reporting tools before and after attempting to fix styling/syntax 
+    - The default or " " which runs reporting tools before and after attempting to fix styling/syntax 
       (Before and after mode)
     
-    - The "-r" option whitch ownly runs reporting tools agenst the given file/directory 
+    - The "-r" option which only runs reporting tools against the given file/directory 
       (reporting mode)
 
-    - The "-d" option whitch runs reporting tools AFTER attempting to fix styling/syntax 
+    - The "-d" option which runs reporting tools AFTER attempting to fix styling/syntax 
       (devleoper mode)
 ```
 # Example(s)
@@ -34,5 +34,5 @@ ChkPy! also has 3 options. these modes/options are explained below in detail.
 ### ChkPy will allow you to run BOTH modes simultaneously. THIS IS NOT RECOMENDED. DO NOT DO THIS.
 ```
 
-    Created by Anhtony Clark, Dylan Haus & Nick Cardin
+    Created by Anthony Clark, Dylan Haus & Nick Cardin
 ```
