@@ -84,7 +84,7 @@ class Modemaker(object):
         '''
         date: 11/09/21
         author: Nick
-        description: 
+        description: initalisation of the varables for Modemaker
         '''
         self.filename = filename
         self.optargs = optargs
