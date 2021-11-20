@@ -1,9 +1,9 @@
 '''
 Author(s): Anthony, Nick, Dylan
 Created date: 10/27/21
-Description: This is the main class for checkpy, this is what the users will interact with whn the file is run.
-last edit: 11/15/21
-PLEASE UPDATE LAST EDIT WHEN YOU UPDATE THIS FILE
+Description: This is the main class for ChkPy, this is what the users will 
+interact with when the file is run.
+last edit: 11/20/21
 '''
 
 import modes, getopt, os, directory
@@ -12,17 +12,18 @@ def main(file,args):
     '''
     date: 11/20/21
     author: Anthony, Nick, Dylan 
-    description: This is the main for chkpy, when this fucntion is called it requirs the folowing: A file/directory name plus any options.
+    description: This is the main for ChkPy, when this function is called 
+    it requires the folowing: A file/directory name plus any options.
 
-    chkpy has 3 optons:
+    chkpy has 3 options:
 
-    - the default or " " whitch runs reporting tools before and after attempting to fix styling/syntax (Before and after mode)
+    - the default or " " which runs reporting tools before and after attempting to fix styling/syntax (Before and after mode)
 
-    - the "-r" option whitch ownly runs reporting tools agenst the given file/directory (reporting mode)
+    - the "-r" option which only runs reporting tools against the given file/directory (reporting mode)
 
-    - the "-d" option whitch runs reporting tools AFTER attempting to fix styling/syntax (devleoping mode)
+    - the "-d" option which runs reporting tools AFTER attempting to fix styling/syntax (developer mode)
 
-    chkpy will allow you to run BOTH modes silmutaniously although this is not reccomended for any serious user
+    chkpy will allow you to run BOTH modes simultaneously although this is not recommended
     '''
     tempargs = args
     opts, args = getopt.getopt(args,"dr")
