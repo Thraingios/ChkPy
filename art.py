@@ -1,5 +1,5 @@
 ''' 
-Authonr(s): Anthony
+Author(s): Anthony
 Created date: 10/27/21
 Description: This file contains art and all the fin ASCCI art bits for checkpy
 "make it look sexy"

@@ -1,5 +1,5 @@
 '''
-Authonr(s): Anthony, Nick, Dylan
+Author(s): Anthony, Nick, Dylan
 Created date: 10/27/21
 Description: This file contains both the functions class (tools class) and the modes class
 The functions class contians functions to call autopep8, pycodestyle & pylint
@@ -11,48 +11,44 @@ import os
 from os import walk
 from pylint import epylint
 
-'''
-date: 10/27/21
-author: Anthony
-description: This class contains the functions that call the 3 tools Chkpy will use
-'''
-class Tools:
 
+class Tools:
     '''
     date: 10/27/21
     author: Anthony
-    description: This function calls autopep8 from the system and runs it against an input file
+    description: This class contains the functions that call the 3 tools Chkpy will use
     '''
+
+
     def auto8(filename): # F1
+        '''
+        date: 10/27/21
+        author: Anthony
+        description: This function calls autopep8 from the system and runs it against an input file
+        '''
         os.system("autopep8 --in-place --aggressive --aggressive --aggressive " + filename)
         return("\nRUNNING AUTOPEP8 WITH AGRESSIVENESS LVL 3\n")
 
-    '''
-    date: 11/01/21
-    edited 11/09/21
-    author: Nick
-    description: This function calls pylint and runs it against an input file and returns the
-    output in a tuple, first part of the tuple should be what we need most of the time however
-    im returning both just in case
-    '''
     def pylint(filename): #F2
+        '''
+        date: 11/01/21
+        edited 11/09/21
+        author: Nick
+        description: This function calls pylint and runs it against an input file and returns the
+        output in a tuple, first part of the tuple should be what we need most of the time however
+        im returning both just in case
+        '''
+
         (pylint_stdout, pylint_stderr) = epylint.py_run(filename, return_std=True)
         #return pylint_stdout.getvalue()
         return "\n OUTPUT FROM PYLINT! \n\n" + pylint_stdout.getvalue() + "\n"
 
-    '''
-    date: 10/27/21
-    author: Dylan
-    description: This function calls pycodestyle from the system and runs it against an input file
-    Think about running with either --count or --statistics if needed
-    '''
+
     def pycode(filename): #F3
         '''
-        date: 11/20/21
-        author: Nick 
-        description: This Function calles pycodestyke with a given 
-        filename then returns the output from that opperation with 
-        some decorative text.
+        date: 10/27/21
+        author: Dylan
+        description: This function calls pycodestyle from the system and runs it against an input file
         '''
 
         pycodestyle = os.popen("pycodestyle " + filename).read()
@@ -85,6 +81,11 @@ class Modemaker(object):
     description: This class takes in a filename as well as a variable amount of other variables (which would be the names of tools) to help build the object
     '''
     def __init__(self, filename, optargs): #note *args is a variable argument meaning that it can take any amount of arguments
+        '''
+        date: 11/09/21
+        author: Nick
+        description: 
+        '''
         self.filename = filename
         self.optargs = optargs
     
