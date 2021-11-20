@@ -47,10 +47,25 @@ class Tools:
     Think about running with either --count or --statistics if needed
     '''
     def pycode(filename): #F3
+        '''
+        date: 11/20/21
+        author: Nick 
+        description: This Function calles pycodestyke with a given 
+        filename then returns the output from that opperation with 
+        some decorative text.
+        '''
+
         pycodestyle = os.popen("pycodestyle " + filename).read()
         return "\n OUTPUT FROM PYCODESTYLE! \n" + pycodestyle + "\n"
     
     def directorymode(mydirectory):
+        '''
+        date: 11/20/21
+        author: Nick & Dylan 
+        description: This functioni takes in a directory from main and runs eatch 
+        of the tools in this program agenst eatch file in the directory tree. This includes all sub-folder
+        '''
+
         f = []
         for (root,dirs,files) in walk(mydirectory):
             for name in files:
@@ -93,9 +108,3 @@ class Modemaker(object):
             #if 'directory' in command:
                 #pass
         return command_out
-        
-        
-
-            
-            
-

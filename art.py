@@ -8,6 +8,12 @@ PLEASE UPDATE LAST EDIT WHEN YOU UPDATE THIS FILE
 '''
 
 def openart():
+    '''
+    date: 11/20/21
+    author: Anthony 
+    description: This Function prints out a simple pece of artwork to the terminal as a way of
+    deccorating our work. looks slick no?
+    '''
     print("        _       _                      _  ")
     print("  ___  | |__   | | __  _ __    _   _  | | ")
     print(" / __| | '_ \  | |/ / | '_ \  | | | | | | ")
@@ -55,6 +61,4 @@ echo "output from pycodestyle post-autopep"
 echo "####################################"
 echo " "
 pycodestyle $1
-
-
 '''

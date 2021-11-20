@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
-import main, sys, art
-art.openart()
+''' 
+Authonr(s): Anthony
+Created date: 11/20/21
+Description: This file exists to cleanly call chkpy from the command line
+witout messing with peramiters. This file calls main but is the entry point for the user
+last edit: 11/20/21
+PLEASE UPDATE LAST EDIT WHEN YOU UPDATE THIS FILE
+'''
+import main
+import sys
 main.main(sys.argv[1:], sys.argv[2:])
-
-#this was made +X on anthonys laptop

@@ -1,5 +1,3 @@
-
-
 '''
 Author(s): Anthony, Nick, Dylan
 Created date: 10/27/21
@@ -8,19 +6,24 @@ last edit: 11/15/21
 PLEASE UPDATE LAST EDIT WHEN YOU UPDATE THIS FILE
 '''
 
-
-'''
-date: 10/27/21
-author: Anthony
-description: This is the main class of the file.
-'''
-
-
-
-
 import modes, getopt, os, directory
 
 def main(file,args):
+    '''
+    date: 11/20/21
+    author: Anthony, Nick, Dylan 
+    description: This is the main for chkpy, when this fucntion is called it requirs the folowing: A file/directory name plus any options.
+
+    chkpy has 3 optons:
+
+    - the default or " " whitch runs reporting tools before and after attempting to fix styling/syntax (Before and after mode)
+
+    - the "-r" option whitch ownly runs reporting tools agenst the given file/directory (reporting mode)
+
+    - the "-d" option whitch runs reporting tools AFTER attempting to fix styling/syntax (devleoping mode)
+
+    chkpy will allow you to run BOTH modes silmutaniously although this is not reccomended for any serious user
+    '''
     tempargs = args
     opts, args = getopt.getopt(args,"dr")
     file = file[0]
