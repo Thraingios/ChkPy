@@ -2,7 +2,7 @@
 Author(s): Anthony, Nick, Dylan
 Created date: 10/27/21
 Description: This file contains both the functions class (tools class) and the modes class
-The functions class contians functions to call autopep8, pycodestyle & pylint
+The functions class contains functions to call autopep8, pycodestyle & pylint
 The modes class contains various function calls to create the program modes
 last edit: 11/02/21
 PLEASE UPDATE LAST EDIT WHEN YOU UPDATE THIS FILE
@@ -16,7 +16,7 @@ class Tools:
     '''
     date: 10/27/21
     author: Anthony
-    description: This class contains the functions that call the 3 tools Chkpy will use
+    description: This class contains the functions that call the 3 tools ChkPy will use
     '''
 
 
@@ -40,7 +40,6 @@ class Tools:
         '''
 
         (pylint_stdout, pylint_stderr) = epylint.py_run(filename, return_std=True)
-        #return pylint_stdout.getvalue()
         return "\n OUTPUT FROM PYLINT! \n\n" + pylint_stdout.getvalue() + "\n"
 
 
@@ -58,8 +57,8 @@ class Tools:
         '''
         date: 11/20/21
         author: Nick & Dylan 
-        description: This functioni takes in a directory from main and runs eatch 
-        of the tools in this program agenst eatch file in the directory tree. This includes all sub-folder
+        description: This function takes in a directory from main and runs each 
+        of the tools in this program against each file in the directory tree. This includes all sub-folders
         '''
 
         f = []
@@ -84,7 +83,7 @@ class Modemaker(object):
         '''
         date: 11/09/21
         author: Nick
-        description: initalisation of the varables for Modemaker
+        description: initialization of the variables for Modemaker
         '''
         self.filename = filename
         self.optargs = optargs
@@ -94,7 +93,7 @@ class Modemaker(object):
         date: 11/09/21
         author: Nick
         description:
-        has two blank lists, one being the command list. this is where we take the arguments passed when making the object and turns them into usable commands.
+        has two blank lists, one being the command list. This is where we take the arguments passed when making the object and turns them into usable commands.
         we then iterate through this command list using eval to actually run the command (note i know its techinally bad practice but the user wont be supplying any of the
         arguments for it and is just used internally) from there we take the output (if any) from each command and append it to command out which is then returned to the user
         '''
@@ -106,6 +105,4 @@ class Modemaker(object):
 
         for command in command_list:
             command_out.append(eval(command))
-            #if 'directory' in command:
-                #pass
         return command_out
