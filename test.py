@@ -10,10 +10,9 @@ Description: This file exists to house the test cases for the main file
 '''
 class Logger():
     """
-    I needed something here in order to catch the output of main since the actual file itelself doesnt actually return anything
+    I needed something here in order to catch the output of main since the actual file itself doesnt actually return anything
     but rather prints it to the console. this should allow for redirection of the console and make it so i can parse it within the tests
     """
-    os.system('clear')
     stdout = sys.stdout
     messages = []
     def start(self): 
@@ -26,7 +25,6 @@ class Logger():
         return self.messages
     def reset(self):
         self.messages = []
-        sys.stdout = sys.__stdout__
 
 class TestReport(unittest.TestCase):
     def test_report_mode_normal(self):
@@ -35,6 +33,7 @@ class TestReport(unittest.TestCase):
         just testing to see if it at least runs both functions that its supposed to.
         """
         log = Logger()
+        log.reset()
         log.start()
         main(['filetest.py', '-r'])
         log.stop()
@@ -42,7 +41,7 @@ class TestReport(unittest.TestCase):
         keys = ['OUTPUT FROM PYLINT!', 'OUTPUT FROM PYCODESTYLE!']
         self.assertIn(keys[0], messages[0])
         self.assertIn(keys[1], messages[2])
-        log.reset()
+        
 
     def test_report_mode_wrong_file(self):
         """
@@ -50,10 +49,12 @@ class TestReport(unittest.TestCase):
         which while it should run both the functions, should also report back that the file doesnt exist
         """
         log= Logger()
+        log.reset()
         log.start()
         main(['b.py', '-r'])
         log.stop()
         messages = log.ret()
+        print(''.join(messages))
         keys = ['OUTPUT FROM PYLINT!', 'OUTPUT FROM PYCODESTYLE!', 'does not exist']
         self.assertIn(keys[0], messages[0])
         self.assertIn(keys[1], messages[2])
