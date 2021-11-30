@@ -1,5 +1,4 @@
-import unittest, sys, os
-from unittest import mock
+import unittest, sys
 from main import main
 
 
@@ -62,7 +61,7 @@ class TestReport(unittest.TestCase):
 class TestDev(unittest.TestCase):
     def test_dev_mode_normal(self):
         """
-        tests report mode on a single file, best case scenario
+        tests dev mode on a single file, best case scenario
         just testing to see if it at least runs both functions that its supposed to.
         """
         log = Logger()
@@ -79,7 +78,7 @@ class TestDev(unittest.TestCase):
 
     def test_dev_mode_wrong_file(self):
         """
-        tests report mode to see if it runs with a file that doesnt exist, 
+        tests dev mode to see if it runs with a file that doesnt exist, 
         which while it should run both the functions, should also report back that the file doesnt exist
         """
         log= Logger()
