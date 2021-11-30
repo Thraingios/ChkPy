@@ -8,7 +8,7 @@ last edit: 11/20/21
 
 import modes, getopt, os, directory
 
-def main(file,args):
+def main(args):
     '''
     date: 11/20/21
     author: Anthony, Nick, Dylan 
@@ -22,12 +22,9 @@ def main(file,args):
     - the "-r" option which only runs reporting tools against the given file/directory (reporting mode)
 
     - the "-d" option which runs reporting tools AFTER attempting to fix styling/syntax (developer mode)
-
-    chkpy will allow you to run BOTH modes simultaneously although this is not recommended
     '''
-    tempargs = args
     opts, args = getopt.getopt(args,"dr")
-    file = file[0]
+    file = args[0]
     Dir_mode_steps = ['directorymode']
     Default_steps =['pylint','pycode', 'auto8', 'pylint', 'pycode']
     Dev_mode_steps = ['auto8', 'pylint', 'pycode']
@@ -36,18 +33,18 @@ def main(file,args):
     seperator = "\n=====================================================================\n"
     if os.path.isdir(file):
         print('Running from a directory!')
-        directory.Directory(file,Dir_mode_steps,tempargs)
+        directory.Directory(Dir_mode_steps,args)
         exit()
         
 
-    if not opts:
+    if len(args) == 1:
         Default_mode = modes.Modemaker(file, Default_steps)
         print(*Default_mode.run(), sep = seperator)
-    for opt, args in opts:
-        if opt in ['-d']:
+    for arg in args:
+        if arg in ['-d']:
             Dev_mode = modes.Modemaker(file, Dev_mode_steps)
             print(*Dev_mode.run(), sep = seperator)
 
-        elif opt in ['-r']:
+        elif arg in ['-r']:
             Report_mode = modes.Modemaker(file, Report_mode_steps)
             print(*Report_mode.run(), sep = seperator)
