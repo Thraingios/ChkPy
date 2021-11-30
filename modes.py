@@ -52,6 +52,7 @@ class Tools:
 
         pycodestyle = os.popen("pycodestyle " + filename).read()
         return "\n OUTPUT FROM PYCODESTYLE! \n" + pycodestyle + "\n"
+        
     
     def directorymode(mydirectory):
         '''

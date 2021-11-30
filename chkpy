@@ -9,9 +9,3 @@ import main
 import sys
 
 main.main(sys.argv[1:])
-
-#main.main(sys.argv[1:], sys.argv[2:])
-
-#another possibility we could do that would only grab the filename and the one argument, would need to edit how main handles these though
-#main.main(sys.argv[1], sys.argv[2])
-#or even just getting rid of the second argument and looping through the first one would work

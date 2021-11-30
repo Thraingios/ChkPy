@@ -35,7 +35,6 @@ def main(args):
         print('Running from a directory!')
         directory.Directory(Dir_mode_steps,args)
         exit()
-        
 
     if len(args) == 1:
         Default_mode = modes.Modemaker(file, Default_steps)
