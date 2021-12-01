@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-''' 
+'''
 Author(s): Anthony
 Created date: 11/20/21
 Description: This file exists to cleanly call chkpy from the command line
-without messing with parameters. This file calls main but is the entry point for the user
+without messing with parameters.
+This file calls main but is the entry point for the user
 '''
-import main
 import sys
+import main
+
 
 main.main(sys.argv[1:])
