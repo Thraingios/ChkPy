@@ -1,3 +1,9 @@
+'''
+Author(s): Nick
+Created date: 12/3/21
+Description: main call for chkpy
+last edit: 12/3/21
+'''
 import sys
 from main import main as mymain
 
