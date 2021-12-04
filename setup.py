@@ -1,5 +1,5 @@
 from setuptools import setup
-import os, sys
+import os
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -9,7 +9,7 @@ with open("README.md", "r") as fh:
 #with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     #long_description = "\n" + fh.read()
 
-VERSION = '0.0.1'
+VERSION = '1.0.0'
 DESCRIPTION = 'Wrapper for 3 python tools to aid in code development'
 
 # Setting up
