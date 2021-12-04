@@ -1,6 +1,7 @@
 import sys
 from main import main as mymain
 
+
 def main(args=None):
     """The main routine."""
     if args is None:
