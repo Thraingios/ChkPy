@@ -1,44 +1,51 @@
+'''
+Author(s): Nick
+Created date: 11/30/21
+Description: This module exists to house the test cases for the main file
+'''
 import unittest
 import sys
 from main import main
 
 
-'''
-Author(s): Nick
-Created date: 11/30/21
-Description: This file exists to house the test cases for the main file
-'''
-
-
 class Logger():
     """
-    I needed something here in order to catch the output of main since the actual file itself doesnt actually return anything
-    but rather prints it to the console. this should allow for redirection of the console and make it so i can parse it within the tests
+    I needed something here in order to catch the output of main since
+    the actual file itselfdoesnt actually return anythingbut rather
+    prints it to the console. this should allow for redirection of
+    the console and make it so i can parse it within the tests
     """
     stdout = sys.stdout
     messages = []
 
     def start(self):
+        """starts the logger"""
         sys.stdout = self
 
     def stop(self):
+        """stops the logger"""
         sys.stdout = self.stdout
 
     def write(self, text):
+        """writes the test to the messages list"""
         self.messages.append(text)
 
     def ret(self):
+        """returns messages"""
         return self.messages
 
     def reset(self):
+        """resets the messages variable for next run"""
         self.messages = []
 
 
 class TestReport(unittest.TestCase):
+    """class for the test cases involving the report function"""
     def test_report_mode_normal(self):
         """
         tests report mode on a single file, best case scenario
-        just testing to see if it at least runs both functions that its supposed to.
+        just testing to see if it at least runs both functions
+        that its supposed to.
         """
         log = Logger()
         log.reset()
@@ -53,7 +60,8 @@ class TestReport(unittest.TestCase):
     def test_report_mode_wrong_file(self):
         """
         tests report mode to see if it runs with a file that doesnt exist,
-        which while it should run both the functions, should also report back that the file doesnt exist
+        which while it should run both the functions, should also report
+        back that the file doesnt exist
         """
         log = Logger()
         log.reset()
@@ -71,10 +79,12 @@ class TestReport(unittest.TestCase):
 
 
 class TestDev(unittest.TestCase):
+    """class for the test cases involving the dev function"""
     def test_dev_mode_normal(self):
         """
         tests dev mode on a single file, best case scenario
-        just testing to see if it at least runs both functions that its supposed to.
+        just testing to see if it at least runs both functions
+        that its supposed to.
         """
         log = Logger()
         log.reset()
@@ -93,7 +103,8 @@ class TestDev(unittest.TestCase):
     def test_dev_mode_wrong_file(self):
         """
         tests dev mode to see if it runs with a file that doesnt exist,
-        which while it should run both the functions, should also report back that the file doesnt exist
+        which while it should run both the functions, should also report
+        back that the file doesnt exist
         """
         log = Logger()
         log.reset()
@@ -113,10 +124,12 @@ class TestDev(unittest.TestCase):
 
 
 class TestDefault(unittest.TestCase):
+    """class for the test cases involving the default function"""
     def test_default_mode_normal(self):
         """
         tests report mode on a single file, best case scenario
-        just testing to see if it at least runs both functions that its supposed to.
+        just testing to see if it at least runs both functions
+        that its supposed to.
         """
         log = Logger()
         log.reset()
@@ -136,8 +149,9 @@ class TestDefault(unittest.TestCase):
 
     def test_default_mode_wrong_file(self):
         """
-        tests default mode to see if it runs with a file that doesnt exist,
-        which while it should run both the functions, should also report back that the file doesnt exist
+        tests default mode to see if it runs with a file that
+        doesnt exist, which while it should run both the functions,
+        should also report back that the file doesnt exist
         """
         log = Logger()
         log.reset()

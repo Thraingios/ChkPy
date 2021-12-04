@@ -31,7 +31,7 @@ class Tools:
         os.system(
             "autopep8 --in-place --aggressive --aggressive --aggressive " +
             filename)
-        return("\nRUNNING AUTOPEP8 WITH AGRESSIVENESS LVL 3\n")
+        return "\nRUNNING AUTOPEP8 WITH AGRESSIVENESS LVL 3\n"
 
     def pylint(filename):  # F2
         '''
@@ -69,15 +69,15 @@ class Tools:
         file in the directory tree. This includes all sub-folders
         '''
 
-        f = []
+        dirlist = []
         for (root, dirs, files) in walk(mydirectory):
             for name in files:
                 if '.py' in name[-3:]:
-                    f.append(os.path.join(root, name))
-        return f
+                    dirlist.append(os.path.join(root, name))
+        return dirlist
 
 
-class Modemaker(object):
+class Modemaker():
     '''
     date: 11/09/21
     author: Nick
