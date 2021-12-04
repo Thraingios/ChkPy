@@ -6,14 +6,22 @@ Pylint provides syntax-error reporting, pycodestyle provides styling reporting &
 
 ChkPy! also has 3 options. these modes/options are explained below in detail.
 ```
-# How to use ChkPy!
+# How to install ChkPy!
+```
+1. Make sure pip is installed
 
+2. Install with command:
+
+pip install chkpy
+```
+# How to use ChkPy!
+```
 1. Open your terminal
 
 2. Make sure your current directory is correct
 
 3. Type "chkpy (filename/directory) (-options)  
-
+```
 # ChkPy!'s 3 Options:
 ```
     - The default or " " which runs reporting tools before and after attempting to fix styling/syntax 
