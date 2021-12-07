@@ -1,31 +1,27 @@
 '''
-Author(s): Nick
+Author(s): Nick, Dylan
 Created date: 12/3/21
 Description: sets up for pip installation
-last edit: 12/3/21
+last edit: 12/6/21
 '''
 
 import os
 from setuptools import setup
 
 
-here = os.path.abspath(os.path.dirname(__file__))
-
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-VERSION = '1.0.0'
-DESCRIPTION = 'Wrapper for 3 python tools to aid in code development'
 
 # Setting up
 setup(
     name="chkpy",
-    version=VERSION,
+    version= '1.0.0',
     author="Anthony Clark, Dylan Haus & Nick Cardin",
     author_email="<mail@unh.edu>",
-    long_description=long_description,
+    description='Wrapper for 3 python tools to aid in code development',
+    long_description='File: README.md',
     license='GPLv3',
-    description=DESCRIPTION,
     long_description_content_type="text/markdown",
     url="https://github.com/nwc1020/ChkPy",
     packages=['chkpy'],
