@@ -1,11 +1,11 @@
 '''
-Author(s): Anthony, Nick, Dylan
+Author(s): Anthony, Nick, Dylan, MRegirouard
 Created date: 10/27/21
 Description: This file contains both the functions class (
 tools class) and the modes class
 The functions class contains functions to call autopep8, pycodestyle & pylint
 The modes class contains various function calls to create the program modes
-last edit: 11/02/21
+last edit: 02/13/22
 PLEASE UPDATE LAST EDIT WHEN YOU UPDATE THIS FILE
 '''
 import os
@@ -24,20 +24,20 @@ class Tools:
     def auto8(filename):  # F1
         '''
         date: 10/27/21
-        author: Anthony
+        author: Anthony, MRegirouard
         description: This function calls autopep8 from the system and runs
         it against an input file
         '''
         os.system(
             "autopep8 --in-place --aggressive --aggressive --aggressive " +
-            filename)
+            "\"" + filename + "\"")
         return "\nRUNNING AUTOPEP8 WITH AGRESSIVENESS LVL 3\n"
 
     def pylint(filename):  # F2
         '''
         date: 11/01/21
-        edited 11/09/21
-        author: Nick
+        edited: 02/13/22
+        author: Nick, MRegirouard
         description: This function calls pylint and
         runs it against an input file and returns the
         output in a tuple, first part of the tuple should be
@@ -45,19 +45,21 @@ class Tools:
         im returning both just in case
         '''
 
-        (pylint_stdout, pylint_stderr) = epylint.py_run(filename, return_std=True)
+        (pylint_stdout, pylint_stderr) = epylint.py_run("\"" + filename + "\"",
+        return_std=True)
         return "\n OUTPUT FROM PYLINT! \n\n" + pylint_stdout.getvalue() + "\n"
 
     def pycode(filename):  # F3
         '''
         date: 10/27/21
-        author: Dylan
+        edited: 02/13/22
+        author: Dylan, MRegirouard
         description: This function calls pycodestyle
         from the system and runs it
         against an input file
         '''
 
-        pycodestyle = os.popen("pycodestyle " + filename).read()
+        pycodestyle = os.popen("pycodestyle " + "\"" + filename + "\"").read()
         return "\n OUTPUT FROM PYCODESTYLE! \n" + pycodestyle + "\n"
 
     def directorymode(mydirectory):
