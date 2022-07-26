@@ -31,7 +31,7 @@ def main(args):
       attempting to fix styling/syntax (developer mode)
     '''
     opts, args = getopt.getopt(args, "dr")
-    file = args[0]
+    file = args[0].replace("\\","/")
     dir_mode_steps = ['directorymode']
     default_steps = ['pylint', 'pycode', 'auto8', 'pylint', 'pycode']
     dev_mode_steps = ['auto8', 'pylint', 'pycode']

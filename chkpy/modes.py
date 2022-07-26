@@ -45,9 +45,8 @@ class Tools:
         im returning both just in case
         '''
 
-        (pylint_stdout, pylint_stderr) = epylint.py_run("\"" + filename + "\"",
-        return_std=True)
-        return "\n OUTPUT FROM PYLINT! \n\n" + pylint_stdout.getvalue() + "\n"
+        pylint_stdout = os.popen("pylint " + "\"" + filename + "\"").read()
+        return "\n OUTPUT FROM PYLINT! \n\n" + pylint_stdout + "\n"
 
     def pycode(filename):  # F3
         '''
