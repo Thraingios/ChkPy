@@ -15,7 +15,7 @@ with open("README.md", "r", encoding='UTF-8') as fh:
 # Setting up
 setup(
     name="chkpy",
-    version='1.0.1',
+    version='1.0.4',
     author="Anthony Clark, Dylan Haus & Nick Cardin",
     author_email="<mail@unh.edu>",
     description='Wrapper for 3 python tools to aid in code development',
